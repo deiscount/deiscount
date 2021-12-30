@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+
+:root {
+  font-size: 1em;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 2rem;
+  margin-top: calc(50px + 2rem);
+}
+
+/* Top Bar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 50px;
+  padding: 1rem;
+  background-color: #F4A931;
+}
+
+.navbar > img{
+  height: 50px;
+}
+
+/* Discount List */
+
+.category {
+  display: flex;
+  align-items: center;
+}
+
+.category > * {
+  margin: 0;
+  padding: 10px;
+  transition: ease 200ms;
+}
+
+.category:hover {
+  cursor: pointer;
+}
+
+.category:hover i {
+  transform: scale(1.2);
+}
+
+.category:hover h1 {
+  transform: translateX(-5px);
+}
+
+.entries {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3.5rem;
+  font-size: 1.3em;
+}
+
+.entries > span {
+  margin-bottom: 10px;
+}
+
+.hide {
+  display: none;
+}
