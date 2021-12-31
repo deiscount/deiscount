@@ -27,8 +27,9 @@ const showList = () => {
   Discounts.forEach(({ title, icon, data }) => {
     let div = document.createElement("div");
     div.classList.add("category");
-    let image = document.createElement("i");
-    image.classList.add('fas', 'fa-2x', `fa-${icon}`);
+    let image = document.createElement("img");
+    image.setAttribute("src", `assets/icons/${icon}.svg`);
+    // image.classList.add('fas', 'fa-2x', `fa-${icon}`);
     div.append(image);
     let header = document.createElement("h1");
     header.innerText = title;
@@ -52,3 +53,12 @@ const showList = () => {
 };
 
 document.addEventListener("DOMContentLoaded", showList);
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    navigator.serviceWorker
+      .register("/serviceWorker.js")
+      .then(res => console.log("Service worker registered."))
+      .catch(err => console.log("Service worker not registered.", err))
+  })
+}
